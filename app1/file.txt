@@ -1,0 +1,42 @@
+//app
+const express = require('express');
+const app = express();
+
+//http methods
+app.get('/',(req,res)=>{
+    // res.writeHead(200,{'content-type':'text/html'});
+    res.send('<h1>This home route</h1>')
+})
+app.post('/',(req,res)=>{
+    // res.writeHead(200,{'content-type':'text/html'});
+    res.send('<h1>This post request from home route</h1>')
+})
+app.put('/home',(req,res)=>{
+    // res.writeHead(200,{'content-type':'text/html'});
+    res.send('<h1>This put request from home route</h1>')
+})
+app.delete('/',(req,res)=>{
+   
+    res.send('<h1>This delete request from home route</h1>')
+})
+
+// module export
+module.exports = app;
+
+
+
+
+
+
+
+
+
+
+
+//index data
+const app = require('./app')
+const PORT = 8080;
+
+app.listen(PORT,()=>{
+    console.log(`server is running successfully at http://localhost:${PORT}`);
+})

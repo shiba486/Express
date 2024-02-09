@@ -1,0 +1,62 @@
+###send response 
+
+#app.get('/',(req,res)=>{
+    res.sendFile(path.resolve (__dirname) + "/index.html")
+    res.send('helo');
+    res.end('hi');
+})
+
+###static middleware
+#app.use(express.static('public'));
+
+###File Download
+# res.download(path.resolve(__dirname) + "/about.html");
+
+
+###Template Engine
+app.set("view engine", "ejs");
+#we can set the views foldername according to us:
+#app.set("views",path.resolve (__dirname) + "/templates");
+
+app.get('/about',(req,res)=>{
+    res.render("about",{
+        title: "my about page"
+    })
+})
+
+
+###Bootstrap styling
+
+###Express Router
+const router = require('express').Router();
+
+//home route
+router.get('/',(req,res)=>{
+    res.render('index',{
+        title: "my home page"
+    })
+});
+module.exports = router;
+
+
+### middleware
+#Application-level middleware
+app.use(middleware)
+
+
+
+Middleware::
+1)body-parser
+2)cookie-parser
+3)cookie-session
+4)cors
+5)errorhandler
+6)morgan
+7)multer
+8)session
+9)method-override
+10)timeout
+
+
+
+
